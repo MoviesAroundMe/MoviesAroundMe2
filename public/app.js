@@ -1,11 +1,17 @@
-var moviesAroundMe = angular.module('MoviesAroundMe',['ngResource']);
+'use strict';
 
-moviesAroundMe.controller('moviesControl', ['OMDb', function(OMDb) {
+var moviesAroundMe = angular.module('MoviesAroundMe', []);
 
-  omdbData: Object;
+moviesAroundMe.controller('moviesControl', ['$rootScope', '$scope', function($rootScope, $scope) {
+  // var self = this;
 
-  var self = this;
-  OMDb.makeRequest('home').then(function(data) {
-    console.log(data);
-  });
+  $rootScope.showTitle = true;
+  $rootScope.page_title = "Movies Around Me"
+  $rootScope.page_description = "Enter your postcode"
+  //
+  // omdbData: Object;
+  //
+  // OMDb.makeRequest('home').then(function(data) {
+  //   console.log(data);
+  // });
 }]);
