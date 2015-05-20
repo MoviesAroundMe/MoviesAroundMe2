@@ -1,7 +1,7 @@
 'use strict';
 
-describe('omdb api service', function(){
-  beforeEach(module('OMDb'));
+describe('OMDb', function(){
+  beforeEach(module('MoviesAroundMe'));
 
   var omdbFactory, httpBackend;
 

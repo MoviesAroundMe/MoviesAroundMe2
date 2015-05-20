@@ -20,8 +20,8 @@ module.exports = function(config) {
     'public/bower_components/angular-resource/angular-resource.js',
     'public/bower_components/angular-mocks/angular-mocks.js',
     'public/app.js',
-    'public/services/*.js',
-    'test/**/*.spec.js'
+    'public/services/omdb.js',
+    'test/*.spec.js'
     ],
 
 
