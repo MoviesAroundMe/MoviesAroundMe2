@@ -1,15 +1,17 @@
 'use strict';
 
+var output;
+
 moviesAroundMe.factory('DistanceMatrix', ['$http', function($http) {
     
   return {
-    makeRequest: function(array) {
+    makeRequest: function(me, cinemas) {
 
       var service = new google.maps.DistanceMatrixService();
       service.getDistanceMatrix(
         {
-          origins: ["SW74LS"],
-          destinations: ["SE19JY", "NW80RJ"],
+          origins: me,
+          destinations: cinemas,
           travelMode: google.maps.TravelMode.DRIVING,
           unitSystem: google.maps.UnitSystem.METRIC,
           avoidHighways: false,
@@ -21,7 +23,7 @@ moviesAroundMe.factory('DistanceMatrix', ['$http', function($http) {
           alert('Error was: ' + status);   
           }
         else {
-          console.log(response.rows)
+          console.log(response.rows);
           }   
         }
       }     

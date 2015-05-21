@@ -1,9 +1,8 @@
 var moviesAroundMe = angular.module('MoviesAroundMe',['ngResource']);
 
-moviesAroundMe.controller('moviesControl', ['Search', 'CineWorld', 'DistanceMatrix', function(Search, CineWorld, DistanceMatrix) {
+moviesAroundMe.controller('moviesControl', ['Search', 'CineWorld', 'DistanceMatrix', 'Aggragator', function(Search, CineWorld, DistanceMatrix, Aggragator) {
   var self = this;
   
-  CineWorld.makeRequest();
-  DistanceMatrix.makeRequest();
+  Aggragator.makeRequest();
 
 }]);
