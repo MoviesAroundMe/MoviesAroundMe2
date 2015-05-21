@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="MoviesAroundMe">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies Around Me</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="app.js"></script>
+    <script src="services/omdb.js"></script>
+  <body ng-controller="moviesControl as mCtrl">
+    <div>
+      <div>OMDb data:{{mCtrl.requestData}}</div>
+      <form class="form-horizontal">
+        Postcode: <input type="text" name="postcode">
+        Distance: <input type="text" name="distance">
+        <button class="btn">Search</button>
+      </form>
+
+      <ul class="list-group">
+
+        <li class="list-group-item">
+      <p>Title: movie #1</p><p>Distance: distance #1</p>
+        </li>
+
+      </ul>
+
+      <form class="ratings-form">
+        Movie title: <input type="text" ng-model="mCtrl.movieTitle">
+        <button class="btn" ng-click="mCtrl.updateMovieRating()">Search</button>
+      </form>
+      <div>
+        IMDb rating: <p>{{mCtrl.imdbRating}}</p>
+      </div>
+    </div>
+
+  </body>
+</html>
