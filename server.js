@@ -4,7 +4,7 @@ var path = require('path');
 var server = require('http').createServer(app);
 
 app.get('/', function(request, response){
- response.sendFile(path.join(__dirname+'/index.html'));
+ response.sendFile(path.join(__dirname+'/index2.html'));
 });
 
 server.listen(3000, function(){

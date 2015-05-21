@@ -1,0 +1,36 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.header {
+  width: 100%;
+  background-color: grey;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+
+  /*The following isn't technically "responsive".*/
+  /*Does it matter? If so, is there a way around?*/
+  height: 60px;
+}
+
+/* The folowwing type selector may not work in all browsers! Check...*/
+input[type="text"] {
+  float:left;
+  border-radius: 15px;
+  text-align: center;
+  height: 35px;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+button {
+  float: right;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+table, td, tr {
+  border: 1px solid grey;
+}

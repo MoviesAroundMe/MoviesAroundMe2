@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="MoviesAroundMe">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies Around Me</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/viewTemplateStyle.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:500,700' rel='stylesheet' type='text/css'>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="app2.js"></script>
+  <body ng-controller="moviesControl as mCtrl">
+      <div class='header'>
+        <input type='text' value='Postcode'>
+        Movies Around Me
+        <button class='btn'>Find Movies</button>
+      </div>
+
+      <div class='content-left-column'>
+        <!-- Table should be angular filled -->
+        <table class=".table-hover">
+          <tr><td>Avengers</td></tr>
+          <tr><td>Big</td></tr>
+        </table>
+      </div>
+
+      <div class='content-right-column'></div>
+
+  </body>
+</html>
