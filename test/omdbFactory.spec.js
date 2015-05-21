@@ -12,10 +12,11 @@ describe('OMDb', function(){
 
   it("should do something", function() {
     httpBackend.whenGET('http://www.omdbapi.com/?t=big&y=&plot=short&r=json&tomatoes=true').respond({
-      Title: "Big"
+      Title: "Big",
+      Year: "1998"
     });
     omdbFactory.makeRequest("big").then(function(results){
-      expect(results).toEqual("Big");
+      expect(results).toEqual(["Big", "1998"]);
     });
     httpBackend.flush();
   });

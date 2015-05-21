@@ -5,16 +5,13 @@ moviesAroundMe.factory('OMDb', ['$http', function($http) {
     return {
       makeRequest: function(title) {
         return $http.get('http://www.omdbapi.com/?t=' + title +'&y=&plot=short&r=json&tomatoes=true').then(function(response){
-          var titleString;
-          var results;
+          var responseString, results;
 
-          console.log(titleString);
+          responseString = response.data;
 
-          titleString = response.Title;
+          console.log(responseString);
 
-          console.log(titleString);
-
-          results = titleString.map(function(result){
+          results = responseString.map(function(result){
             return result.Title
           });
 
