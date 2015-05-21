@@ -3,13 +3,19 @@
 - starting the project with a dev branch
 
 
-# Setup
+## Setup
 - Clone this repository
 - `npm install`
 - `cd public`
 - `bower install`
 - Run `npm start` from the root folder to start the app
 
-# Rating service
-- Returns a json object where ____.data.data has information about the movie
-- the json response .data.data.Error will say "Movie not found!" if no movie is found
+## Rating service (OMDb)
+- Returns a promise
+- Inside controller: `OMDb.makeRequest(movieTitle).then(function(response) { WORK WITH RESPONSE });`
+- `response` in the above line has these properties that are useful:
+- response.data.________
+-              .Plot
+-              .imdbRating
+-              .tomatoRating (.tomatoRotten, .tomatoUserRating)
+- There are a bunch more, simply log `response` and have a look
