@@ -7,19 +7,21 @@ moviesAroundMe.factory('OMDb', ['$http', function($http) {
         return $http.get('http://www.omdbapi.com/?t=' + title +'&y=&plot=short&r=json&tomatoes=true').then(function(response){
           var responseString, results;
 
-          responseString = response.data;
+          responseString = JSON.stringify(response.data);
 
           console.log(responseString);
 
-          results = responseString.map(function(result){
-            return result.Title
-          });
+          // results = responseString.map(function(result){
+          //   return result.Title
+          // });
+          //
+          // results = results.filter(function(element, position) {
+          //   return results.indexOf(element) === position;
+          // });
 
-          results = results.filter(function(element, position) {
-            return results.indexOf(element) === position;
-          });
+          // too complicated
 
-          return results;
+          return responseString;
         });
       }
     };

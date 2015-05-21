@@ -15,8 +15,8 @@ describe('OMDb', function(){
       Title: "Big",
       Year: "1998"
     });
-    omdbFactory.makeRequest("big").then(function(results){
-      expect(results).toEqual(["Big", "1998"]);
+    omdbFactory.makeRequest("big").then(function(responseString){
+      expect(responseString).toEqual(Object({ Title: 'Big', Year: '1998' }));
     });
     httpBackend.flush();
   });
