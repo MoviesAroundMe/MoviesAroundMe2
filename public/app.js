@@ -1,13 +1,12 @@
 'use strict';
 
 var moviesAroundMe = angular.module('MoviesAroundMe', []);
-moviesAroundMe.controller('moviesControl', ['OMDb', function(OMDb) {
-  self = this;
-  omdbData: Object;
-
 
 moviesAroundMe.controller('moviesControl', ['$rootScope', '$scope', 'OMDb', function($rootScope, $scope, OMDb) {
   var self = this;
+
+  self = this;
+  omdbData: Object;
 
   $rootScope.showTitle = true;
   $rootScope.page_title = "Movies Around Me"
