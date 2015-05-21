@@ -8,6 +8,10 @@ moviesAroundMe.controller('moviesControl', ['$rootScope', '$scope', function($ro
   $rootScope.showTitle = true;
   $rootScope.page_title = "Movies Around Me"
   $rootScope.page_description = "Enter your postcode"
+
+  // OMDb.makeRequest("big").then(function(results) {
+  //   $scope.results = results;
+  // });
   //
   // omdbData: Object;
   //

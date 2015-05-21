@@ -5,8 +5,8 @@ describe('OMDb', function(){
 
   var omdbFactory, httpBackend;
 
-  beforeEach(inject(function(_omdbFactory_, $httpBackend){
-    omdbFactory = _omdbFactory_;
+  beforeEach(inject(function(OMDb, $httpBackend){
+    omdbFactory = OMDb;
     httpBackend = $httpBackend;
   }));
 
@@ -14,8 +14,8 @@ describe('OMDb', function(){
     httpBackend.whenGET('http://www.omdbapi.com/?t=big&y=&plot=short&r=json&tomatoes=true').respond({
       Title: "Big"
     });
-    omdbFactory.makeRequest("big").then(function(Title){
-      expect(Title).toEqual(["Big"]);
+    omdbFactory.makeRequest("big").then(function(results){
+      expect(results).toEqual("Big");
     });
     httpBackend.flush();
   });
