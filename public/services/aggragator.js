@@ -1,17 +1,15 @@
-'use strict';
 
-var me = ["SW74LS"]
-var cinemas = ["SE19JY", "NW80RJ"]
-    
-moviesAroundMe.factory('Aggragator', ['CineWorld', 'DistanceMatrix', function(CineWorld, DistanceMatrix) {
+moviesAroundMe.factory('Aggregator', ['$http', function($http) {
 
-  return {
-    makeRequest: function() {
+  function Aggregator() {
 
-      console.log(CineWorld.makeRequest());
-      DistanceMatrix.makeRequest(me, cinemas);
+    var self = this;
 
-    }
+    self.getName = function() {
+        return $http.get('http://localhost:3000/name');
+    };
+ 
   }
-
+  
+  return new Aggregator();
 }]);

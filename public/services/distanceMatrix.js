@@ -5,12 +5,12 @@ var output;
 moviesAroundMe.factory('DistanceMatrix', ['$http', function($http) {
     
   return {
-    makeRequest: function(me, cinemas) {
+    makeRequest: function(userPostcode, cinemas) {
 
       var service = new google.maps.DistanceMatrixService();
       service.getDistanceMatrix(
         {
-          origins: me,
+          origins: userPostcode,
           destinations: cinemas,
           travelMode: google.maps.TravelMode.DRIVING,
           unitSystem: google.maps.UnitSystem.METRIC,
@@ -24,6 +24,7 @@ moviesAroundMe.factory('DistanceMatrix', ['$http', function($http) {
           }
         else {
           console.log(response.rows);
+          return response.rows;
           }   
         }
       }     

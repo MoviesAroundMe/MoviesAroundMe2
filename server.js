@@ -11,6 +11,10 @@ server.listen(3000, function(){
  console.log("Server listening on port 3000");
 });
 
+app.get('/name', function(request, response){
+ response.send("Sammy");
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = server;
