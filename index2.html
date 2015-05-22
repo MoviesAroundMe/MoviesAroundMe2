@@ -11,28 +11,28 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app2.js"></script>
   <body ng-controller="moviesControl as mCtrl">
-      <div class='header'>
-        <input type='text' value='Postcode'>
-        Movies Around Me
-        <button class='btn'>Find Movies</button>
-      </div>
+    <div class='header'>
+      <input class ="postcode-search" type='text' name="postcode" placeholder="Postcode">
+      <span class="site-title">Movies Around Me</span>
+      <button class='btn find-movies-button'>Find Movies</button>
+    </div>
 
-      <div class='content-left-column'>
-        <!-- Table should be angular filled -->
-        <table class="table table-hover">
-          <tr><td>1</td></tr>
-          <tr><td>2</td></tr>
-          <tr><td>3</td></tr>
-          <tr><td>1</td></tr>
-          <tr><td>2</td></tr>
-          <tr><td>3</td></tr>
-          <tr><td>1</td></tr>
-          <tr><td>2</td></tr>
-          <tr><td>3</td></tr>
-        </table>
-      </div>
+    <div class='content-left-column'>
+      <!-- Table should be angular filled -->
+      <table class="table table-hover movie-list-table">
+        <tr><td>1</td></tr>
+        <tr><td>2</td></tr>
+        <tr><td>3</td></tr>
+        <tr><td>4</td></tr>
+        <tr><td>5</td></tr>
+        <tr><td>6</td></tr>
+        <tr><td>7</td></tr>
+        <tr><td>8</td></tr>
+        <tr><td>9</td></tr>
+      </table>
+    </div>
 
-      <div class='content-right-column'></div>
+    <div class='content-right-column'></div>
 
   </body>
 </html>

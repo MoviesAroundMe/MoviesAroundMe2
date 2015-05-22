@@ -1,7 +1,12 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
   overflow-y: hidden;
+  min-height: 100%;
 }
 
 .header {
@@ -17,10 +22,10 @@ body {
   height: 60px;
 }
 
-/* The folowwing type selector may not work in all browsers! Check...*/
+/* The following type selector may not work in all browsers! Check...*/
 input[type="text"] {
   float:left;
-  border-radius: 15px;
+  border-radius: 10px;
   text-align: center;
   height: 35px;
   font-weight: normal;
@@ -34,7 +39,7 @@ button {
 }
 
 td {
-  height: 100px;
+  height: 150px;
 }
 
 .content-left-column{
@@ -42,4 +47,30 @@ td {
   height: 600px;
   border-right: 1px solid black;
   overflow: scroll;
+}
+
+.postcode-search {
+  outline: none; 
+}
+
+.postcode-search:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+.site-title {
+  color: white;
+}
+
+.find-movies-button {
+   transition: all 0.3s ease 0s;
+   border: 0;
+}
+
+.find-movies-button:hover {
+   background: #CF4647;
+}
+
+.movie-list-table {
+  height: 500px;
+  overflow-y: scroll; 
 }
