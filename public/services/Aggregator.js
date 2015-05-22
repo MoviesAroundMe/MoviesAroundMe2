@@ -8,9 +8,9 @@ moviesAroundMe.factory('Aggregator', ['CineWorld', 'DistanceMatrix', function(Ci
   return {
     makeRequest: function() {
 
-      // console.log(CineWorld.makeRequest());
+      console.log(CineWorld.makeRequest());
       // DistanceMatrix.makeRequest(me, cinemas);
-
+      
     }
   }
 

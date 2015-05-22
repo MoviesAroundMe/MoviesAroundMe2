@@ -1,15 +1,29 @@
 'use strict';
 
-moviesAroundMe.factory('OMDb', ['$http', function($http) {
-    return {
-      makeRequest: function(title) {
-        return $http.get('http://www.omdbapi.com/?t=' + title +'&y=&plot=short&r=json&tomatoes=true').then(function(response){
-          var responseString;
+moviesAroundMe.factory('omdbApiService', function ($resource, $cacheFactory) {
 
-          responseString = response.data;
+  console.log("Hello")
 
-          return responseString;
-        });
-      }
-    };
-  }]);
+  var service = {},
+      omdb_api_endpoint = "http://www.omdbapi.com/",
+      default_params = {i:"", t:"", r:"json"},
+      Movie = $resource(
+                          omdb_api_endpoint,
+                          default_params,
+                          {
+                            query: {method: "GET", cache: true}
+                          }
+                       );
+
+  service.getMovieByTitle = function(title) {
+    console.log("Hello")
+    return Movie.query({t: title})
+  };
+
+  service.getMovieById = function(id) {
+    return Movie.query({i: id})
+  };
+  console.log("Hello")
+  // console.log(service.getMovieByTitle(big));
+  return service;
+});

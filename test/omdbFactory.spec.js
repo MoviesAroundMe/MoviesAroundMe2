@@ -1,12 +1,12 @@
 'use strict';
 
-describe('OMDb', function(){
+describe('$omdb', function(){
   beforeEach(module('MoviesAroundMe'));
 
   var omdbFactory, httpBackend;
 
-  beforeEach(inject(function(OMDb, $httpBackend){
-    omdbFactory = OMDb;
+  beforeEach(inject(function($omdb, $httpBackend){
+    omdbFactory = $omdb;
     httpBackend = $httpBackend;
   }));
 

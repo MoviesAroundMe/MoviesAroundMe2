@@ -4,35 +4,30 @@
     <meta charset="utf-8">
     <title>Movies Around Me</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- <script>
+        $(document).ready(function() {
+            $.material.init();
+        });
+    </script> -->
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+
+    <script src="bower_components/omdb-client/dist/omdb-client.js"></script>
+
     <script src="app.js"></script>
     <script src="services/omdb.js"></script>
+
   <body ng-controller="moviesControl as mCtrl">
-    <div>
-      <div>OMDb data:{{mCtrl.requestData}}</div>
-      <form class="form-horizontal">
-        Postcode: <input type="text" name="postcode">
-        Distance: <input type="text" name="distance">
-        <button class="btn">Search</button>
-      </form>
 
-      <ul class="list-group">
-
-        <li class="list-group-item">
-      <p>Title: movie #1</p><p>Distance: distance #1</p>
-        </li>
-
-      </ul>
-
-      <form class="ratings-form">
-        Movie title: <input type="text" ng-model="mCtrl.movieTitle">
-        <button class="btn" ng-click="mCtrl.updateMovieRating()">Search</button>
-      </form>
-      <div>
-        IMDb rating: <p>{{mCtrl.imdbRating}}</p>
-      </div>
+    <div class="jumbotron">
+        <div ng-view></div>
     </div>
 
   </body>

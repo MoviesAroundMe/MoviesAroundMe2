@@ -1,22 +1,36 @@
 'use strict';
 
-var moviesAroundMe = angular.module('MoviesAroundMe', []);
+var moviesAroundMe = angular
+  .module('MoviesAroundMe', [
+    'ngResource',
+    'ngRoute'
+  ])
+  .controller('moviesControl', function($scope, $routeParams, omdbApiService) {
 
-moviesAroundMe.controller('moviesControl', ['$rootScope', '$scope', 'OMDb', function($rootScope, $scope, OMDb) {
-  var self = this;
+    $scope.movie = omdbApiService.getMovieById($routeParams.id);
 
-  self = this;
-  omdbData: Object;
+    // console.log("Hello")
+    // console.log(service.getMovieByTitle(big));
+    console.log(service.getMovieByTitle(big));
 
-  $rootScope.showTitle = true;
-  $rootScope.page_title = "Movies Around Me"
-  $rootScope.page_description = "Enter your postcode"
-
-  self.updateMovieRating = function(){
-    console.log('Movie title: ' + self.movieTitle)
-    OMDb.makeRequest(self.movieTitle).then(function(response) {
-      self.imdbRating = response.data.imdbRating;
-    });
-  };
-
-}]);
+    $scope.goToSearchResult = function (title) {
+     var movie = omdbApiService.getMovieByTitle(title);
+     movie.$promise.then(
+       function(movieData){
+         if (movieData['imdbID'] === undefined) { return false; }
+         $scope.goTo(movieData);
+       }
+     );
+   }
+  //  console.log(service.getMovieByTitle(big));
+  })
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/movies.html',
+        controller: 'moviesControl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });

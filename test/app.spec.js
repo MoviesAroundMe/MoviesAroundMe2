@@ -14,15 +14,15 @@ describe('moviesControl', function(){
     ctrl('moviesControl', {'$rootScope' : root, '$scope' : scope, 'OMDb' : omdb});
   }));
 
-  it('it should show title', function() {
-    expect(root.showTitle == true);
-  });
-
-  it('should have a correct page title', function() {
-    expect(root.page_title).toEqual('Movies Around Me');
-  });
-
-  it('should have a correct page description', function(){
-    expect(root.page_description).toEqual('Enter your postcode');
-  });
+  // it('it should show title', function() {
+  //   expect(root.showTitle == true);
+  // });
+  //
+  // it('should have a correct page title', function() {
+  //   expect(root.page_title).toEqual('Movies Around Me');
+  // });
+  //
+  // it('should have a correct page description', function(){
+  //   expect(root.page_description).toEqual('Enter your postcode');
+  // });
 });
