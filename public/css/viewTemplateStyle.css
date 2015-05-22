@@ -1,5 +1,7 @@
 body {
+  margin: 0;
   font-family: 'Raleway', sans-serif;
+  overflow-y: hidden;
 }
 
 .header {
@@ -31,6 +33,13 @@ button {
   font-size: 18px;
 }
 
-table, td, tr {
-  border: 1px solid grey;
+td {
+  height: 100px;
+}
+
+.content-left-column{
+  width: 50%;
+  height: 600px;
+  border-right: 1px solid black;
+  overflow: scroll;
 }
