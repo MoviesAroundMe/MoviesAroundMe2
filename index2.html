@@ -13,7 +13,7 @@
   <body ng-controller="moviesControl as mCtrl">
     <div class="mainContainer">
       <div class='header'>
-        <input class ="postcode-search" type='text' name="postcode" placeholder="Postcode">
+        <input class ="postcode-search" type='text' name="postcode" placeholder="Enter your postcode">
         <span class="site-title">Movies Around Me</span>
         <button class='btn find-movies-button' ng-click="mCtrl.updateMovies()">Find Movies</button>
       </div>
@@ -25,10 +25,10 @@
             <td>{{movie.Poster}}</td>
             <td><b>{{movie.Title}}<b></td>
             <td>
-              <div class="width:100%">IMDb: {{movie.IMDb}}</div>
+              <div style="width:100%">IMDb: {{movie.IMDb}}</div>
               <div style="width:100%">Rotten Tomatoes: {{movie.Rotten}}</div>
             </td>
-            <td>{{movie.Distance}}</td>
+            <td id="movie-distance">{{movie.Distance}}</td>
             <td><img src="images/arrow.png" class="arrow"></td>
           </tr>
         </table>
