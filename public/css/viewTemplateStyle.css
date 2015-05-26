@@ -9,7 +9,7 @@ body {
   height: 100%;
 }
 
-.erythan {
+.mainContainer {
   height:100%;
 }
 
@@ -42,7 +42,7 @@ button {
 }
 
 .content-left-column{
-  width: 50%;
+  width: 600px;
   height: 92%;
   border-right: 1px solid black;
   overflow: auto;
@@ -72,4 +72,10 @@ button {
 
 .movie-list-table {
   overflow-y: scroll;
+}
+
+.arrow {
+  margin-top: 10px;
+  width: 15px;
+  height: 15px;
 }

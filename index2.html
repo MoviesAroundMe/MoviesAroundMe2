@@ -11,7 +11,7 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app2.js"></script>
   <body ng-controller="moviesControl as mCtrl">
-    <div class="erythan">
+    <div class="mainContainer">
       <div class='header'>
         <input class ="postcode-search" type='text' name="postcode" placeholder="Postcode">
         <span class="site-title">Movies Around Me</span>
@@ -29,6 +29,7 @@
               <div style="width:100%">Rotten Tomatoes: {{movie.Rotten}}</div>
             </td>
             <td>{{movie.Distance}}</td>
+            <td><img src="images/arrow.png" class="arrow"></td>
           </tr>
         </table>
       </div>
