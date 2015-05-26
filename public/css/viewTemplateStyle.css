@@ -15,7 +15,7 @@ body {
 
 .header {
   width: 100%;
-  background-color: grey;
+  background-color: #444444;
   padding: 10px;
   text-align: center;
   font-weight: bold;
@@ -43,9 +43,15 @@ button {
 
 .content-left-column{
   width: 600px;
-  height: 92%;
-  border-right: 1px solid black;
+  height: 100%;
+  border-right: 2px solid #444444;
   overflow: auto;
+  float: left; 
+}
+
+.content-right-column {
+  float: left;
+  padding: 15px;
 }
 
 .postcode-search {
@@ -61,13 +67,15 @@ button {
 }
 
 .find-movies-button {
-   transition: all 0.3s ease 0s;
-   border: 0;
-   outline: none;
+  transition: all 0.3s ease 0s;
+  border: 0;
+  outline: none;
+  margin-top: 4px;
+  font-weight: bold;
 }
 
-.find-movies-button:hover {
-   background: #CF4647;
+.btn:focus, .btn:active, .btn:active:focus {
+  outline: none;
 }
 
 .movie-list-table {
@@ -78,4 +86,10 @@ button {
   margin-top: 10px;
   width: 15px;
   height: 15px;
+}
+
+.google-maps iframe {
+  position: absolute;
+  width: 67%;
+  height: 92%;
 }
