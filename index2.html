@@ -11,28 +11,29 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app2.js"></script>
   <body ng-controller="moviesControl as mCtrl">
-    <div class='header'>
-      <input class ="postcode-search" type='text' name="postcode" placeholder="Postcode">
-      <span class="site-title">Movies Around Me</span>
-      <button class='btn find-movies-button'>Find Movies</button>
+    <div class="erythan">
+      <div class='header'>
+        <input class ="postcode-search" type='text' name="postcode" placeholder="Postcode">
+        <span class="site-title">Movies Around Me</span>
+        <button class='btn find-movies-button' ng-click="mCtrl.updateMovies()">Find Movies</button>
+      </div>
+
+      <div class='content-left-column'>
+        <!-- Table should be angular filled -->
+        <table class="table table-hover movie-list-table">
+          <tr ng-repeat="movie in mCtrl.movies">
+            <td>{{movie.Poster}}</td>
+            <td>{{movie.Title}}</td>
+            <td>
+              <div class="width:100%">IMDb: {{movie.IMDb}}</div>
+              <div style="width:100%">Rotten Tomatoes: {{movie.Rotten}}</div>
+            </td>
+            <td>{{movie.Distance}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class='content-right-column'></div>
     </div>
-
-    <div class='content-left-column'>
-      <!-- Table should be angular filled -->
-      <table class="table table-hover movie-list-table">
-        <tr><td>1</td></tr>
-        <tr><td>2</td></tr>
-        <tr><td>3</td></tr>
-        <tr><td>4</td></tr>
-        <tr><td>5</td></tr>
-        <tr><td>6</td></tr>
-        <tr><td>7</td></tr>
-        <tr><td>8</td></tr>
-        <tr><td>9</td></tr>
-      </table>
-    </div>
-
-    <div class='content-right-column'></div>
-
   </body>
 </html>

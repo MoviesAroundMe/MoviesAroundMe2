@@ -6,7 +6,11 @@ body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
   overflow-y: hidden;
-  min-height: 100%;
+  height: 100%;
+}
+
+.erythan {
+  height:100%;
 }
 
 .header {
@@ -15,11 +19,10 @@ body {
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  font-size: 30px;
-
-  /*The following isn't technically "responsive".*/
-  /*Does it matter? If so, is there a way around?*/
-  height: 60px;
+  font-size: 200%;
+  min-height:60px;
+  max-height:60px;
+  height: 12%;
 }
 
 /* The following type selector may not work in all browsers! Check...*/
@@ -38,19 +41,15 @@ button {
   font-size: 18px;
 }
 
-td {
-  height: 150px;
-}
-
 .content-left-column{
   width: 50%;
-  height: 600px;
+  height: 92%;
   border-right: 1px solid black;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .postcode-search {
-  outline: none; 
+  outline: none;
 }
 
 .postcode-search:focus::-webkit-input-placeholder {
@@ -64,6 +63,7 @@ td {
 .find-movies-button {
    transition: all 0.3s ease 0s;
    border: 0;
+   outline: none;
 }
 
 .find-movies-button:hover {
@@ -71,6 +71,5 @@ td {
 }
 
 .movie-list-table {
-  height: 500px;
-  overflow-y: scroll; 
+  overflow-y: scroll;
 }
