@@ -14,7 +14,7 @@
     <script src="services/distanceMatrix.js"></script>
     <script src="services/aggragator.js"></script>
 
-  <body ng-controller="moviesControl">
+  <body ng-controller="moviesControl as ctrl">
     <div>
 
       <form class="form-horizontal">
@@ -22,7 +22,8 @@
         Distance: <input type="text" name="distance">
         <button class="btn">Search</button>
       </form>
-
+      <!-- cinemas: {{ctrl.cinemasArray}} -->
+      Flicker: {{ctrl.photos}}
       <ul class="list-group">
 
         <li class="list-group-item">
