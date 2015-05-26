@@ -5,24 +5,37 @@ var moviesAroundMe = angular
     'ngResource',
     'ngRoute'
   ])
-  .controller('moviesControl', function($scope, $routeParams, omdbApiService) {
+  .controller('moviesControl', function($scope, $http) {
 
-    $scope.movie = omdbApiService.getMovieById($routeParams.id);
+  //   $scope.movie = omdbApiService.getMovieById($routeParams.id);
+  //   console.log("Hello")
+  //   console.log(omdbApiService.getMovieById($routeParams.tt0094737));
+  //   console.log("Hello")
+   //
+  //   $scope.goToSearchResult = function (title) {
+  //    var movie = omdbApiService.getMovieByTitle(title);
+  //    movie.$promise.then(
+  //      function(movieData){
+  //        if (movieData['imdbID'] === undefined) { return false; }
+  //        $scope.goTo(movieData);
+  //      }
+  //    );
+  //  }
+    console.log("Hello");
+    console.log($scope.search(big));
 
-    // console.log("Hello")
-    // console.log(service.getMovieByTitle(big));
-    console.log(service.getMovieByTitle(big));
+      $scope.search = function(searchMovie) {
+    			$scope.api = 'http://www.omdbapi.com/?t=' + $scope.searchMovie + '&y=&plot=short&r=json';
 
-    $scope.goToSearchResult = function (title) {
-     var movie = omdbApiService.getMovieByTitle(title);
-     movie.$promise.then(
-       function(movieData){
-         if (movieData['imdbID'] === undefined) { return false; }
-         $scope.goTo(movieData);
-       }
-     );
-   }
-  //  console.log(service.getMovieByTitle(big));
+    			$http.get($scope.api)
+    				.success(function(data) {
+    					$scope.name = data.Title;
+    					$scope.release = data.Released;
+    					$scope.length = data.Runtime;
+    					$scope.description = data.Plot;
+    					$scope.rating = data.imdbRating;
+    				});
+    		}
   })
   .config(function ($routeProvider) {
     $routeProvider
