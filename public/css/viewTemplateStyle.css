@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   overflow-y: hidden;
   height: 100%;
 }
@@ -41,7 +41,8 @@ input[type="text"] {
   text-align: center;
   height: 35px;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 15px;
+  margin-top: 2px;
 }
 
 .postcode-search {
@@ -80,25 +81,51 @@ button {
   overflow-y: scroll;
 }
 
+td img {
+  width: 50px;
+}
+
+#movie-title {
+  font-weight: bold;
+  padding-top: 32px;
+  text-align: center;
+}
+
 #movie-distance {
-  padding-top: 20px;
+  padding-top: 32px;
+  text-align: center;
+}
+
+#movie-rating {
+  padding-top: 24px;
+  text-align: center;
 }
 
 .arrow {
-  margin-top: 10px;
   width: 15px;
   height: 15px;
+  margin-top: 25px;
 }
+
 
 /****** RIGHT COLUMN ******/
 
+h3 {
+  margin-top: 0px;
+  text-decoration: underline;
+}
+
 .content-right-column {
   float: left;
-  padding: 15px;
+}
+
+.google-maps {
+  width: 100%;
+  height: 100%;
 }
 
 .google-maps iframe {
   position: absolute;
-  width: 67%;
-  height: 92%;
+  width: 100%;
+  height: 100%;
 }
