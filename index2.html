@@ -18,25 +18,27 @@
         <button class='btn find-movies-button' ng-click="mCtrl.updateMovies()">Find Movies</button>
       </div>
 
-      <div class='content-left-column'>
-        <!-- Table should be angular filled -->
-        <table class="table table-hover movie-list-table">
-          <tr ng-repeat="movie in mCtrl.movies">
-            <td><img src="https://cdn.evbuc.com/eventlogos/37137568/big28officialmovieposter29.jpeg">{{movie.Poster}}</td>
-            <td id="movie-title">{{movie.Title}}</td>
-            <td>
-              <div id="movie-rating">IMDb: {{movie.IMDb}}</div>
-            </td>
-            <td id="movie-distance">{{movie.Distance}}</td>
-            <td><img src="images/arrow.png" class="arrow"></td>
-          </tr>
-        </table>
-      </div>
+      <div class="content-container">
+        <div class='content-left-column'>
+          <!-- Table should be angular filled -->
+          <table class="table table-hover movie-list-table">
+            <tr ng-repeat="movie in mCtrl.movies">
+              <td><img src="https://cdn.evbuc.com/eventlogos/37137568/big28officialmovieposter29.jpeg">{{movie.Poster}}</td>
+              <td id="movie-title">{{movie.Title}}</td>
+              <td>
+                <div id="movie-rating">IMDb: {{movie.IMDb}}</div>
+              </td>
+              <td id="movie-distance">{{movie.Distance}}</td>
+              <td><img src="images/arrow.png" class="arrow"></td>
+            </tr>
+          </table>
+        </div>
 
-      <div class='content-right-column'>
-        <div class="google-maps">
-          <iframe frameborder="0" style="border:0"
-          src="https://www.google.com/maps/embed/v1/directions?origin=W14+9AX&destination=SW5 9TA&key=AIzaSyBCj5rD1yeJmhglY3eapLgqW1GC8WZDoP0"></iframe>
+        <div class='content-right-column'>
+          <div class="google-maps">
+            <iframe frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/directions?origin=W14+9AX&destination=SW5 9TA&key=AIzaSyBCj5rD1yeJmhglY3eapLgqW1GC8WZDoP0"></iframe>
+          </div>
         </div>
       </div>
     </div>
