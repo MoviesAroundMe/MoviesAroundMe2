@@ -34,7 +34,7 @@ body {
   height: 100%;
   bottom:0;
   top: 0;
-  border-right: 2px solid #444444;
+  border-right: 3px solid #444444;
   overflow: auto;
 }
 
@@ -48,6 +48,7 @@ body {
   bottom: 0;
   margin-top: 60px;
   top:0;
+  background-color: #E0E0E0;
 }
 
 .google-maps iframe {
@@ -102,6 +103,14 @@ td img {
   width: 50px;
 }
 
+td {
+  cursor: pointer;
+}
+
+#movie-poster {
+  width: 30px;
+}
+
 #movie-title {
   font-weight: bold;
   padding-top: 32px;
@@ -114,7 +123,7 @@ td img {
 }
 
 #movie-rating {
-  padding-top: 24px;
+  padding-top: 25px;
   text-align: center;
 }
 
