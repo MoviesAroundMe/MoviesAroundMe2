@@ -4,36 +4,44 @@
     <meta charset="utf-8">
     <title>Movies Around Me</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/viewTemplateStyle.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700italic' rel='stylesheet' type='text/css'>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="app.js"></script>
-    <script src="services/omdb.js"></script>
+  </head>
   <body ng-controller="moviesControl as mCtrl">
-    <div>
-      <div>OMDb data:{{mCtrl.requestData}}</div>
-      <form class="form-horizontal">
-        Postcode: <input type="text" name="postcode">
-        Distance: <input type="text" name="distance">
-        <button class="btn">Search</button>
-      </form>
+    <div class="mainContainer">
+      <div class='header'>
+        <input ng-model="mCtrl.postcode" class="postcode-search" type='text' name="postcode" placeholder="Enter your postcode">
+        <span class="site-title">Movies Around Me</span>
+        <button class='btn find-movies-button' ng-click="mCtrl.updateMovies()">Find Movies</button>
+      </div>
 
-      <ul class="list-group">
+      <div class="content-container">
+        <div class='content-left-column'>
+          <!-- Table should be angular filled -->
+          <table class="table table-hover movie-list-table">
+            <tr ng-repeat="movie in mCtrl.movies" ng-click="mCtrl.updateMap(movie.Cinema)">
+              <td id="movie-poster"><img src="https://cdn.evbuc.com/eventlogos/37137568/big28officialmovieposter29.jpeg">{{movie.Poster}}</td>
+              <td id="movie-title">{{movie.Title}}</td>
+              <td>
+                <div id="movie-rating">IMDb: {{movie.IMDb}}</div>
+              </td>
+              <td id="movie-distance">{{movie.Distance}}</td>
+              <td><img src="images/arrow.png" class="arrow"></td>
+            </tr>
+          </table>
+        </div>
 
-        <li class="list-group-item">
-      <p>Title: movie #1</p><p>Distance: distance #1</p>
-        </li>
-
-      </ul>
-
-      <form class="ratings-form">
-        Movie title: <input type="text" ng-model="mCtrl.movieTitle">
-        <button class="btn" ng-click="mCtrl.updateMovieRating()">Search</button>
-      </form>
-      <div>
-        IMDb rating: <p>{{mCtrl.imdbRating}}</p>
+        <div class='content-right-column'>
+          <div class="google-maps">
+            <iframe id="map-frame" frameborder="0" style="border:0"
+            src=""></iframe>
+          </div>
+        </div>
       </div>
     </div>
-
   </body>
 </html>
