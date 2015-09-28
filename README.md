@@ -1,7 +1,7 @@
 #Movies Around Me - Find the closest movie around you, its rating and where it's playing
 ###Made with care in AngularJS and NodeJS
 
-##[Link to Movies Around Me](https://moviesaroundme.com/)
+##[Link to Heroku (API Deprecated)](https://moviesaroundme.com/)
 
 ![landing screenshot](https://github.com/MoviesAroundMe/MoviesAroundMe2/blob/development/public/images/moviesaroundme.png?raw=true)
 
