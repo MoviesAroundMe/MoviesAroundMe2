@@ -1,7 +1,9 @@
-# MoviesAroundMe2
+#Movies Around Me - Find the closest movie around you, its rating and where it's playing
+###Made with care in AngularJS and NodeJS
 
-- starting the project with a dev branch
+##[Link to Movies Around Me](https://moviesaroundme.com/)
 
+![landing screenshot](https://github.com/MoviesAroundMe/MoviesAroundMe2/blob/development/public/images/moviesaroundme.png?raw=true)
 
 ## Setup
 - Clone this repository
@@ -9,13 +11,3 @@
 - `cd public`
 - `bower install`
 - Run `npm start` from the root folder to start the app
-
-## Rating service (OMDb)
-- Returns a promise
-- Inside controller: `OMDb.makeRequest(movieTitle).then(function(response) { WORK WITH RESPONSE });`
-- `response` in the above line has these properties that are useful:
-- response.data.________
--              .Plot
--              .imdbRating
--              .tomatoRating (.tomatoRotten, .tomatoUserRating)
-- There are a bunch more, simply log `response` and have a look
