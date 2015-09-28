@@ -3,6 +3,8 @@
 
 ##[Link to Movies Around Me](https://moviesaroundme.com/)
 
+![landing screenshot](https://github.com/MoviesAroundMe/MoviesAroundMe2/blob/development/public/images/moviesaroundme.png?raw=true)
+
 ## Setup
 - Clone this repository
 - `npm install`
